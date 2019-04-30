@@ -41,11 +41,17 @@ function makeGrid() {
     // Number of rows
     for (var a = 0; a < height; a++){
         var row = table.appendChild(document.createElement('tr'));
-        var columns = "";
         // Number of columns
         for (var b = 0; b < width; b++) {
-            columns += "<td></td>";
+            var column = row.appendChild(document.createElement('td'));
+            column.addEventListener('click', paintCell);
         };
-        row.innerHTML = columns;
     };
 };
+
+// Funcion to paint cells when clicked
+
+function paintCell() {
+    var color = document.getElementById("colorPicker").value;
+
+}
