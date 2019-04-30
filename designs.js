@@ -38,6 +38,7 @@ function makeGrid() {
     // Get values
     var height = document.getElementById("inputHeight").value;
     var width = document.getElementById("inputWidth").value;
+    var color = document.getElementById("colorPicker").value;
     // Number of rows
     for (var a = 0; a < height; a++){
         var row = table.appendChild(document.createElement('tr'));
@@ -53,5 +54,6 @@ function makeGrid() {
 
 function paintCell() {
     var color = document.getElementById("colorPicker").value;
-
+    event.target.style.backgroundColor = color;
+    console.log('Cell clicked')
 }
