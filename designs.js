@@ -15,14 +15,10 @@ var table = document.getElementById("pixelCanvas")
 
 sizePicker.addEventListener("submit", function (form) {
     form.preventDefault();
-    console.log('Form submit');
     // Print values in console
     var height = document.getElementById("inputHeight").value;
-    console.log(height);
     var width = document.getElementById("inputWidth").value;
-    console.log(width);
     var color = document.getElementById("colorPicker").value;
-    console.log(color);
     // Call makeGrid to create table
     makeGrid();
 });
@@ -30,7 +26,6 @@ sizePicker.addEventListener("submit", function (form) {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
-    console.log("makeGrid called");
     // Clear table
     while (table.hasChildNodes()) {
         table.removeChild(table.lastChild);
@@ -55,5 +50,4 @@ function makeGrid() {
 function paintCell() {
     var color = document.getElementById("colorPicker").value;
     event.target.style.backgroundColor = color;
-    console.log('Cell clicked')
 }
