@@ -15,10 +15,6 @@ var table = document.getElementById("pixelCanvas")
 
 sizePicker.addEventListener("submit", function (form) {
     form.preventDefault();
-    // Print values in console
-    var height = document.getElementById("inputHeight").value;
-    var width = document.getElementById("inputWidth").value;
-    var color = document.getElementById("colorPicker").value;
     // Call makeGrid to create table
     makeGrid();
 });
@@ -32,8 +28,13 @@ function makeGrid() {
     }
     // Get values
     var height = document.getElementById("inputHeight").value;
+    if (height > 30) {
+        var height = 30;
+    };
     var width = document.getElementById("inputWidth").value;
-    var color = document.getElementById("colorPicker").value;
+    if (width > 80) {
+        var width = 80;
+    };
     // Number of rows
     for (var a = 0; a < height; a++){
         var row = table.appendChild(document.createElement('tr'));
